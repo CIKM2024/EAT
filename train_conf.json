@@ -1,0 +1,52 @@
+{
+	"batch_size": 1500,
+	"num_epochs": 1,
+    "stop_ratio": 0.98,
+    "reg_loss_weight": 0.1,
+	"expert_num": 3,
+    "gates": [12956, 200000],
+    "trans_thres": "0.95,0.95",
+	"source": {
+        "CTR":
+        [
+            {
+                "table": "sample_pv",
+                "train_start_time": "20240101",
+                "train_end_time": "20240110",
+                "eval_start_time": "20240111",
+                "eval_end_time": "20240112",
+                "partitions": "20240101,20240102,20240103,20240104,20240105,20240106",
+                "proportion": 0.5,
+                "batch_size": 0.5
+            },
+			{
+                "table": "sample_unpv",
+                "train_start_time": "20240101",
+                "train_end_time": "20240110",
+                "eval_start_time": "20240111",
+                "eval_end_time": "20240112",
+                "partitions": "20240101,20240102,20240103,20240104,20240105,20240106",
+                "proportion": 0.5,
+                "batch_size": 0.5
+			}
+        ]
+	},
+	"input_columns": {
+		"CTR": {
+			"user_columns": [
+				"u_nick",
+				"u_gender",
+				"u_age"
+			],
+			"item_columns": [
+				"i_id",
+				"i_cate",
+				"i_sellerid",
+				"i_price"
+			],
+			"sceneid": [
+				"sceneid"
+			]
+        }
+	}
+}
