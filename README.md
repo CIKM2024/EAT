@@ -1,2 +1,2 @@
 # EAT
-CIKM2024: EAT
+Effective Utilization of Large-scale Unobserved Data in Recommendation Systems
